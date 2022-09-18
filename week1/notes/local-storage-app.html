@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage App</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            height: 100vh;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+        }
+
+        aside {
+            height: 100vh;
+        }
+
+        h1 {
+            margin: auto;
+            padding: .5rem;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .h2-container {
+            height: 2.5rem;
+            border-bottom: 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        input,
+        textarea {
+            outline: none;
+            background-color: antiquewhite;
+            border: none;
+            padding: .5rem;
+        }
+
+        textarea {
+            max-width: 240px;
+            max-height: 250px;
+            min-height: 250px;
+            min-width: 240px;
+        }
+
+        
+
+        .my-notes-aside {
+            border-right: 1px solid;
+            border-top: 1px solid;
+        }
+
+        .notes-section-aside {
+            border-top: 1px solid;
+        }
+
+        #notes-list {
+            padding: 0 .5rem .5rem .5rem;
+        }
+
+        #new-note-container {
+            border-bottom: 1px solid;
+            display: flex;
+            justify-content: left;
+        }
+
+        #notes-section {
+            padding: 1rem;
+        }
+
+        #notes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: .5rem;
+            row-gap: .5rem;
+        }
+
+        #notes li   {
+            display: grid;
+            grid-template-rows: 30px 250px 30px;
+            grid-template-columns: 240px;
+            row-gap: 0;
+        }
+
+        .note-title-btn-container   {
+            display: grid;
+            grid-template-columns: 210px 30px;
+            border-bottom: 1px solid black;
+        }
+
+        button {
+            border: none;
+            background-color: gray;
+        }
+
+        .bottom-btns-container {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 5px;
+        }
+
+        .bottom-btns-container button {
+            width: 100%;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Notes App with Local Storage</h1>
+    </header>
+    <main>
+        <aside class="my-notes-aside">
+            <div class="h2-container">
+                <h2>My Notes</h2>
+            </div>
+            <ol id="notes-list"></ol>
+        </aside>
+
+        <aside class="notes-section-aside">
+            <div id="new-note-container" class="h2-container">
+                <button id="new-note" type="button" onclick="createNote()">New Note</button>
+                <button id="clear-notes-btn" onclick="clearNotes()">Clear Notes</button>
+            </div>
+
+            <section id="notes-section">
+                <ol id="notes"></ol>
+            </section>
+        </aside>
+    </main>
+
+    <script>
+        const notesListSection = document.querySelector("#notes-list");
+        let noNotes;
+        var saveNoteBtn;
+
+        if (notesListSection.innerHTML == "") {
+            noNotes = document.createElement("p");
+            noNotes.innerHTML = 'No notes available. <em> click New Note to create your first note<em>';
+            notesListSection.appendChild(noNotes);
+        } 
+
+        function createNote() {
+            let notes = document.querySelector("#notes");
+            let notesLi = document.createElement("li");
+            let newNoteBody = document.createElement("textarea");
+            let newNoteTitle = document.createElement("input");
+            let closeNoteBtn = document.createElement("button");
+            let noteTitleBtn = document.createElement("div");
+            saveNoteBtn = document.createElement("button");
+            let clearNoteBtn = document.createElement("button");
+            let bottomBtnsContainer = document.createElement("div");
+
+            closeNoteBtn.innerHTML = "X";
+            clearNoteBtn.innerHTML = "Clear";
+            saveNoteBtn.innerHTML = "Save";
+
+
+            noteTitleBtn.setAttribute("class", "note-title-btn-container")
+            newNoteTitle.setAttribute("placeholder", "Note title here.");
+            newNoteTitle.setAttribute("class", "new-note");
+            newNoteTitle.classList.add("new-note-title");
+            newNoteBody.setAttribute("class", "new-note");
+            newNoteBody.classList.add("new-note-body");
+            newNoteBody.setAttribute("placeholder", "Type your notes here.");
+            closeNoteBtn.setAttribute("class", "close-note-btn");
+            saveNoteBtn.setAttribute("onclick", "saveNote(this)")
+            bottomBtnsContainer.setAttribute("class", "bottom-btns-container");
+
+
+
+            noteTitleBtn.append(newNoteTitle);
+            noteTitleBtn.append(closeNoteBtn);
+            bottomBtnsContainer.append(saveNoteBtn);
+            bottomBtnsContainer.append(clearNoteBtn);
+            notesLi.append(noteTitleBtn);
+            notesLi.append(newNoteBody);
+            notesLi.append(bottomBtnsContainer)
+            notes.append(notesLi);
+
+        }
+
+        function saveNote(buttonClicked) {
+            // Remove message that says there are not notes available
+            // when the first note is created.
+            if (notesListSection.contains(noNotes)) {
+                notesListSection.removeChild(noNotes);  
+            };
+
+            // Store note title and body in local storage.
+            let noteTitle = document.querySelectorAll(".new-note-title");
+            let noteBody = document.querySelectorAll(".new-note-body");
+            localStorage.setItem(noteTitle, noteBody);
+
+            let asideNoteLi = document.createElement("li");
+            
+            asideNoteLi.innerHTML= noteTitle;
+            notesListSection.append(asideNoteLi);
+
+            console.log(noteTitle[buttonClicked.indexOf]);
+            console.log(noteBody);
+        }
+
+    </script>
+</body>
+
+</html>

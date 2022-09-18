@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Practice</title>
+    <style>
+        textarea    {
+            width: 600px;
+            height: 250px;
+            background-color: lightyellow;
+            margin-top: 1rem;
+        }
+
+        .box {
+            background-color: red;
+            width: 20px;
+            height: 20px;
+        }
+
+        .local-storage-app {
+            display: flex;
+            column-gap: 1rem;
+        }
+
+        #story_output {
+            border: 1px solid;
+            width: 90%;
+            padding: .5rem;
+
+        }
+
+        .buttons {
+            margin: .5rem auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h1::after {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: black;
+            margin-top: 1rem;
+        }
+    </style>
+
+    <script>
+        
+        function displayStory() {
+            var storyHtml = document.querySelector("#story_editor").value;
+            let storyOutput = document.querySelector("#story_output");
+            storyOutput.style.display = "block";
+            storyOutput.innerHTML = storyHtml;
+
+            
+        };
+
+        function saveStory() {
+            var storyName = document.querySelector("#story_name").value;
+            var storyHtml = document.querySelector("#story_editor").value;
+            localStorage.setItem(storyName, storyHtml);
+        }
+
+        function loadStory() {
+            var storyName = document.querySelector("#story_name").value;
+            var storyHtml = localStorage.getItem(storyName);
+            document.querySelector("#story_editor").value = storyHtml;
+        }
+
+    </script>
+</head>
+<body>
+
+
+    <header>
+        <h1>Local Storage</h1>
+    </header>
+    <main>
+        <div>
+            <h2>Local Storage</h2>
+            <ul>
+                <li>Local storage allows data to be stored in a web browser</li>
+                <li>Data stored in local storage has no expiration date but can be removed or deleted</li>
+                <li>Local storage data is stored using the key value pair</li>
+                <li>The localStorage.setItem(key, value) function is used to store data in local storage</li>
+                <li>The localStorage.getItem(key) function is used to retrieve data from the local storage.</li>
+            </ul>
+            <p>The following is a story editor app built with the local storage feature.</p>
+            <p>In the app, a user can start a story with a title and body then save it.</p>
+            <p>Stories stored in the app can be retrieved at anytime by entering the title of the story and selecting find it.</p>
+            <p>Completed stories can be displayed in the section by the right.</p>
+        </div>
+        <div>
+            <h2>Story Editor App</h2>
+            <div  class="local-storage-app">
+                <div>
+                    Story name: <input id="story_name" type="text" placeholder="Your story title here.">
+                    <section class="buttons">
+                        <button id="load_story" onclick="loadStory()">Find and Edit it</button>
+                        <button id="save_story" onclick="saveStory()">Save it</button>
+                        <button id="display_story" onclick="displayStory()">Display it</button>
+                    </section>
+                    <textarea name="story" id="story_editor" placeholder="Type your story here."></textarea>
+                </div>
+                
+                <section id="story_output"></section>
+            </div  class="local-storage-app">
+        </div>
+    </main>
+</body>
+</html>
