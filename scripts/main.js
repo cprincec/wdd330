@@ -4,6 +4,11 @@ const links = [
         label: "Week 1 notes",
         url: "week1/index.html",
         description: "Local Storage and Master Mobile UX"
+    },
+    {
+        label: "Week 2 notes",
+        url: "week2/index.html",
+        description: "Programming Basics, Arrays, Functions"
     }
 ];
 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Arrays, Logic and Loops</title>
+    <style>
+        body {
+          width: 1000px;
+          margin: 0 auto;
+          font-size: 18px;
+        }
+      </style>
+</head>
+
+<body>
+    <h2>ARRAYS</h2>
+    <ul>
+        <li><strong>delete()</strong> is used to remove an item at a particular index from an array. for example delete
+            arr[2] // removes item at index 2 and replaces it with undefined. </li>
+        <li><strong>DESTRUCTURING</strong> an array is the concept of taking out values in an array and assigning them
+            to variables names in an array such that they can be accessed as individual values. <br> Eg:
+            const [x, y] = [1, 2] // in this case, the value of x is 1 and the value of y is 2.</li>
+    </ul>
+
+    <h3>Array Methods: </h3>
+    <ul>
+        <li><strong> pop()</strong>: removes the last item from an array and returns the length of the new array.</li>
+        <li><strong> shift()</strong>: removes the first item in an array and returns the new length of the array.</li>
+        <li><strong> push()</strong>: adds an item into the end of an array and returns the length of the new array.
+        </li>
+        <li><strong>unshift()</strong> : adds an item to the starts of an array and returns the length of the new array.
+        </li>
+        <li><strong> concat()</strong>: Creates a new array that contains the items in the old array and the items in
+            array passed into it.</li>
+        <li>The <strong>spread operator (...)</strong> can also be used to achieve this. <br> Eg: let array = ["a",
+            "b"]; let newArray = a.concat(["c", "d"]); // newArray = ["a", "b", "c", "d"]
+            <br><strong>or </strong> newArray = [...array, ...["c", "d"]]; // this has the same result as the example
+            above.
+        </li>
+        <li><strong> join()</strong>: This can be used to turn the items in an array into a single string seperated by
+            whatever you pass in as arguement.</li>
+        <li><strong>slice()</strong> : returns an array with items whose index is specified as arguement.</li>
+        <li><strong>splice()</strong> : replaces an array item at a particular item with an item / set of items.</li>
+        <li><strong>reverse()</strong> : reverses the order of items in an array such that the first becomes last and
+            last becomes first.</li>
+        <li><strong>sort()</strong> : sorts an array in alphabetical order. Should not be used for array of numbers.
+        </li>
+    </ul>
+
+
+    <h3> Set</h3>
+    <ul>
+        <li> A Set is an object that can store values but the values can never be duplicate. </li>
+        <li>A set can store arrays.</li>
+        <li>Use the new Set() command to create a set.</li>
+        <li> Set methods include: has(), clear(), delete(), add().</li>
+        <li> Sets can be converted to arrays using the spread method.</li>
+    </ul>
+
+    <h3>TENARY OPERATOR</h3>
+    <ul>
+        <li>This operation has three operands arranged in this format: condition ? code to run if condition is true :
+            code to run if false </li>
+    </ul>
+
+    <h3>For of </h3>
+    <ul>
+        <li>Used to loop through every item in a set or array. <br>
+            example let array = [1, 2, 3]; for (const value of array) { console.log(value)} // this would give 1 2 3 all
+            on a new line.</li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

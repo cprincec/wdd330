@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming Basics</title>
+  <style>
+    body {
+      width: 1000px;
+      margin: 0 auto;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Programming Basics</h2>
+  <p>program is an instruction that tells the computer how to perform a particular task.</p>
+
+  <h2> Low-level language</h2>
+  <p>Early programs were written in machine code and assembly language. Closer to computer's hardware and as such fast
+    execution.</p>
+
+  <h2>High-level language</h2>
+  <p>Human readable and writable code. Such as C,C++ or Java. Compiled into machine code and executed.</p>
+
+  <h2>Scripting language</h2>
+  <p>These are programming languages that are interpreted at run-time. these languages are not comiled before execution,
+    instead, they are interpreted at the moment of execution. This means they are slower execution time that compiled
+    languages.</p>
+
+  <h2>JavaScript</h2>
+  <ul>
+    <li>Created to add interection with users in webpages.</li>
+    <li>Created by Brendan Eich employee of the Netscape company.</li>
+    <li>Prototype was created in 10 days (with a lot of bugs and quirks)</li>
+    <li> Initially calle Mocha</li>
+    <li>then changed to LiveScript</li>
+    <li>Named JavaScript to feed off the popularity of JAVA at the time.</li>
+    <li>JavaScript's official name is ECMAScript.</li>
+    <li>Was widely accepted and used.</li>
+    <li>Became misused by rigorous and passive copying and pasting of code snippet that led to use errornous examples
+      online.</li>
+    <li>Is widely supported among browsers.</li>
+    <li>Was standardized with the help of World Wide Web Consortium (W3C) and ECMA.</li>
+    <li>Javascript Speed has increased over time.</li>
+  </ul>
+
+
+
+
+
+  <strong><em>Don't mix JavaScript with HTML. Seperate them to avoid breaking code after changes to HTML.</em></strong>
+
+  <h3>Unobtrusive JavaScript</h3>
+  <ul>
+    <li>This approach allow Webpages to function optimally with little or no JavaScript availability.</li>
+  </ul>
+  <p><strong>Principles</strong> <br>
+    Seperate JavaScript code from HTML by:
+  <ol>
+    <li> Using the Script tag</li>
+    <li>Using the script tag with src to link to external javasrcipt file.</li>
+  </ol>
+
+  <h3>Graceful Degradation </h3>
+  <p>The process of building a website to function well in browsers that supports JavaScript, but still works to a
+    reasonable standard in older browser or if JavaScript or some of its features are unavailable.</p>
+
+  <h3>Progressive Enhancement </h3>
+  <p>This has to do with building applications that can run with basic functionalities and effects that can run in older
+    browsers or less JavaScript availability, then adding functionalities that can run on updated or modern browsers.
+  </p>
+
+
+  <br>
+
+  <h2>CODES</h2>
+  <ul>
+    <li>Math.random() method returns a random number between 0 and 1. It is normally used with the Math.floor() method.
+    </li>
+    <li>The Math.random() method gives a decimal number, the Math.floor() method rounds down that number. <br>
+      Example: return a random number beween 0 and 7 - <br>
+      function getRandomInt() {
+      return Math.floor(7*Math.random())
+      };</li>
+  </ul>
+
+  <h3>Transpilers</h3>
+  <ul>
+    <li>Converts javascript code from one version to another.</li>
+    <li>Babel is a transpiler.</li>
+    <li>Babel code to be added to HTML :<\script src='https://unpkg.com/babel-standalone@6/babel.min.js'>
+        <\sscript>
+    </li>
+    <li>The link must be added before any JavScript tag</li>
+  </ul>
+
+  <h3>PROGRAMMING BASICS </h3>
+  <ul>
+    <li>The syntax used by Javascript is known as C-style syntax because its similarities withe the C programming
+      language. </li>
+    <li>Javascript has 7 data types, six of them are primitive</li>
+    <li>Primitive data types include: String, Symbol (introduced in ES6), Number, Boolen, Undefined, Null.</li>
+    <li>Any value that isn't one of the primitive data types listed above is an object.</li>
+    <li>JavaScript objects includes: arrays, functions and object literals.</li>
+  </ul>
+
+  <h3> Variables </h3>
+  <ul>
+    <li>A variable contains a value stored at memory</li>
+    <li>let and const are used to declare variables</li>
+    <li>variables have to be declared before they can be used.</li>
+    <li>Variables declared with the let and const variables have block scope.</li>
+    <li>Variables declared with var keyword are global scope and can be reassigned.</li>
+    <li>Variables declared outside curly braces are Global scoped</li>
+    <li>Global scope means they can be accessed from anywhere in the program.</li>
+    <li>Variables declared within curly braces (blocks) are local scoped which means they can only be accessed within
+      that
+      block.</li>
+    <li>Global variables should be avoided as much as possible</li>
+    <li>They can cause name clashes in large programs and bring bugs.</li>
+  </ul>
+
+  <h3> Variable Naming</h3>
+  <ul>
+    <li>Variable and constants names can begin with any of the following: <br>
+      lower or uppercase <br>
+      dollar sign ($) - discouraged as JQuery uses same nominal rule <br>
+      underscore (_) - This is used to idenfy private properties</li>
+    <li>Variables can contain numbers, but cannot start with them.</li>
+    <li>Variable names are case sensitive eg: name is not the same as Name and NAME</li>
+  </ul>
+
+  <h3>Direct Assignment and Assignment by Reference. </h3>
+  <ul>
+    <li> Assigning a primitive value is know as Direct Assignment</li>
+    <li>When a primitive value is stored in a variable, any changes made are made directly to the value.
+      <br> Eg: let a = 1; // a = 1
+      <br> let b = a; // b = 1, a = 1
+      <br> b = 2; // b = 2, a = 1.
+      <br> Notice that the change in made to b did not affect the reference a but rather the value.
+    </li>
+    <li>Assignment by Reference is when a variable stores a non-primitive value.</li>
+    <li>In assignment by reference, changes made will affect all references to that object. <br>
+      Eg: let a = {value: 1}; <br>
+      let b = a; // a.value = 1, b.value = 1 <br>
+      b.value = 2; // a.value = 2, b.value = 2</li>
+  </ul>
+
+
+  <h3>Strings </h3>
+
+  <ul>
+    <li>JavaScript strings have properties and methods</li>
+    <li>Example of property is the .length which returns the number of characters in the string.</li>
+    <li>Example of method is the toUpperCase() method which converts a lowercase string to uppercase. The charAt()
+      method is
+      use to identify the character at a certain position.</li>
+    <li>The indexOf() method identifies where a certain character appears in a string. If a character does not appear in
+      a
+      string, -1 will be returned</li>
+  </ul>
+
+  <h3>IMPORTANT STRING METHODS</h3>
+  <ul>
+    <li>toUpperCase(): changes a string to uppercase</li>
+    <li>indexOf(): returns the index of a character in a string.</li>
+    <li>charAt(): returns the character at a specific index in a string</li>
+    <li>lastIndexOf(): returns the index of the last occurence of a character in a string.</li>
+    <li>endsWith(): checks if a string ends with a specific character</li>
+    <li>startsWith(): check if a string starts with a character.</li>
+    <li>includes(): checks if s string contains a character.</li>
+    <li>trim(): removes leading an trailing whitespaces in strings. Including tabs, new line (\n).</li>
+    <li>repeat(): repeats a string a stated amount of time.</li>
+  </ul>
+
+
+  <h2>TEMPLATE LITERALS</h2>
+  <p>The backtick is used todeliminate strings to allow using of both types of quotes in the same string, interoplation
+    of
+    Javascript expression in a string.</p>
+
+  <u> QUESTION?</u>
+  <em>HOW ARE HEXADECIMAL NUMBER CONVERTED TO DECIMAL?</em>
+
+  <h3>Type Coersion</h3>
+
+  <ul>
+    <li>A situation where JavaScript tries to convert a value to another data type inorder to perform an operation on
+      it. This
+      isdone automatically/implicitly by Javascript.</li>
+    <li>Automatic type coersion happens in situation like trying to add number of string type (eg "3") to a number of
+      number
+      type, thus: <br>
+      "3" * 2 = // will return 6 even though 6 is a string. Javascript coerced the "3" into a number type to enable the
+      multiplication <br>
+      Manual type conversion can be done using: <br>
+      1. String() - for converting numbers to string. <br>
+      2. Number() - for converting numbers to string. <br>
+      etc. </li>
+  </ul>
+
+  <h3>Parsing Numbers</h3>
+  <ul>
+  <li> This is converting numbers represented as string (such as "2", "78") to number. Eg: <br>
+  let num = "2" <br>
+  parseInt(num) // returns 2 </li>
+  <li>Using the parseInt() on decimal numbers of string type returns just the numbers before the decimal point. <br> Eg:
+  parseInt("2.9") // returns 2.</li>
+  <li>parseFloat() is used to return a decimal number of string type as a float number data type.</li>
+</ul>
+
+<h2>BOOLEAN </h2>
+<ul>
+ <li>Every value in JavaScript has a Boolean value and most of them are true (known as truthy value)</li> 
+ <li>There are 9 values that are known as falsy values, namly: "", '', ``, 0, -0, NaN, false, null, undefined.</li> 
+</ul>
+ <strong>Do not use the ^ operator for exponent. Use the specific math method: math.pow()</strong> 
+ <br>
+ <br> 
+ <br>
+ <br>
+
+</body>
+
+</html>
