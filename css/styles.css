@@ -82,13 +82,12 @@ a:hover {
 
 
 .description {
-    padding: var(--medium) var(--small);
+    padding: var(--medium) var(--medium);
     color: var(--accent-clr);
     border-radius: 0 0 var(--small) var(--small);
+    text-align: center;
     
 }
-
-
 
 
 @media (min-width:32.5em) {
@@ -102,7 +101,7 @@ a:hover {
 @media (min-width:64em) {
     ol {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
