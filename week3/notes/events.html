@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Events</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Notes on Events</h1>
+    <ul>
+        <li>The click events also works when user press the Enter key, taps the screen.</li>
+        <li>inline event handlers should be avoided. It goes against the principle of unobtrusive javascript.</li>
+        <li>addEVentLister () is the current and best way to add event handlers to a page.</li>
+        <li>an events object gets passed to the event handler anytime it is triggered.</li>
+        <li>the events object contains information about the event that was triggered.</li>
+        <li>The event.type tells the type of event. Eg: "click"</li>
+        <li>the event.target tell the element that triggered the event.</li>
+        <li>list of all events are found at https://developer.mozilla.org/en-US/docs/Web/Events</li>
+        <li>Be cautious when using the "click" and "dblclick" events on the same target as the first click of a double
+            click will behave as a click event.</li>
+        <li>The key press events is the most reliable way to find which character was pressed as it works on only keys
+            that produce a character along with the "Delete Key"</li>
+        <li>Modifier keys refer to keys such as Ctrl, Shift, Alt, meta (Cmd on Mac)</li>
+        <li>Modifires keys will trigger the keydown and keyup events but will not fire the keypress event.</li>
+        <li>Event delegation is when an event listener is added to a parent element to capture events that happen to its
+            children elements.</li>
+    </ul>
+</body>
+
+</html>

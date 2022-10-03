@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objects</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="num">
-        <li></li>
-    </div>
-    
-    <script>
-        let num = document.querySelector(".num");
-        console.log(num.childNodes);
-        
-    </script>
+
+    <h1>Notes on OBJECTS LITERALS</h1>
+    <ul>
+        <li>JavaScript Object data type that stores data in key-value pairs.</li>
+        <li>Data is not arranged in any particular order.</li>
+        <li>Data can be accessed using the dot notation.</li>
+        <li>Can also store functions.</li>
+        <li>Functions stored in objects literals are known as methods.</li>
+        <li><strong>hadOwnProperty()</strong> is used to to know if a property exists in an object literal. This is not
+            include inhherited properties.</li>
+        <li><strong>Object.entries(objectName)</strong> returns the keys and objects in an object literal. </li>
+        <li><strong>delete</strong> can be used to remove an item from an object.</li>
+    </ul>
+
+    <h2>JSON</h2>
+    <ul>
+        <li> JavaScript Object Notation is a light-weight data storage format used to store large number of
+            services/data.
+            invented by douglas Crockford in 2001.</li>
+        <li>Different from Object literal</li>
+        <li>property names are in double quotes.</li>
+        <li>functions are not permited values.</li>
+        <li>Has the <strong>parse()</strong> method that converts the JSON strings to JavaScript Object.</li>
+        <li>the parse() strips the keys of their double quotes.</li>
+        <li><strong><em>stringify</em></strong> converts JavaScript Object to JSON data.</li>
+
+        <li><strong>Math.trunc()</strong> returns only the integer parts of a number. Eg. Math.trunc(4.9) // returns 4.
+        </li>
+
+        <li>Date Objects have getter and setter methods.</li>
+
+        <li>A day can be represented by 1000 * 60 * 60 * 24 milliseconds.</li>
+        <li><strong>getTimezoneOffset()</strong> returns the difference between the local time on the computer and UTC.
+    </ul>
+    </li>
+
 </body>
+
 </html>
