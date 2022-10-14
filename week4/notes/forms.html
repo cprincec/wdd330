@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on HTML forms</title>
+</head>
+
+<body>
+    <h1>FORMS</h1>
+    <strong>question: What is the difference between the blur event and the hover?</strong>
+
+    <ul>
+        <li>Reset buttons are generally poor usability because it prone to being clicked in error and wipes out form
+            data.</li>
+        <li>form events include: submit, change, blur, focus etc.</li>
+        <li>you can access inputs elements using the value of the its "name" attribute. Eg
+            document.form.valueOfNameAttribute.</li>
+        <li>number, tel and color are new input types but can be used now.</li>
+        <li>When using the select element for drop-down list, If only one item was selected, this will return a
+            reference to that selection; otherwise a collection will be returned containing each selection.</li>
+        <li>Form validation should be done both on the client and server side, because, the client side validation can
+            be bypassed completely.</li>
+        <li>document.forms will return an HTML collection of all the forms on a page.</li>
+        <li>form.elements will return an HTML collection of all the elements contained within a form.</li>
+        <li>Forms have focus, blur, and change events that fire as a user interacts with the form.</li>
+        <li>Forms also have a submit event that can be used to intercept a form before it’s been submitted.</li>
+    </ul>
+</body>
+
+</html>

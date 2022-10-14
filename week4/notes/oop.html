@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Object Oriented Programming</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Object Oriented Programming</h1>
+    <ul>
+        <li> OOP is the style of programming that allows us create objects with properties and methods that act on the
+            properties.</li>
+        <li>An instance of a class is created to use it.</li>
+        <li>JavaScript didn't have classes before ES6</li>
+        <li>The "this" keyword refers to an instance of the class.</li>
+        <li>All code in a class is implicitly in strict mode</li>
+        <li>An error is thrown when trying to access a class that was created using the class declaration method without
+            the "new" keyword" </li>
+        <li>Static method are called directly using the class name and not an instance of the class.</li>
+        <li>dunder proto is short for "double underscore proto" // __proto__</li>
+        <li>never use arrays or objects as a default value in prototype.</li>
+    </ul>
+    <h2><strong>mixins</strong></h2>
+    <ul>
+        <li>This is a way of adding properties and methods of some objects to another object without using inheritance.
+        </li>
+        <li>mixin is achieved through the use of Object.assign() method.</li>
+    </ul>
+
+    <h2><strong>Composition over inheritance</strong></h2>
+    <ul>
+        <li>Gorilla Banana is the situation where you need a method from a class but end up inheriting the whole class
+            to
+            gain access to the particular method.</li>
+        <li>The composition over inheritance solves the above problem.</li>
+    </ul>
+
+</body>
+
+</html>
