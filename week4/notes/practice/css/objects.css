@@ -1,0 +1,44 @@
+:root {
+    --primary-clr: 
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 18px;
+}
+
+#subscription-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+    margin-top: 2rem;
+}
+
+.subscription {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    width: 300px;
+}
+
+.price-tag {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-bottom: .5rem;
+}
+
+.gold .price-tag:first-of-type {
+    background-color: red;
+}
+
+.price-tag h3 {
+    text-align: center;
+}
+
+li {
+    list-style:inside;
+}

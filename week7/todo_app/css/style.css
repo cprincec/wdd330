@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body    {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+.center{
+    text-align: center;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+#todos-box {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+#todos-info {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: .5rem;
+}
+
+#todos-info button {
+    padding: .2rem;
+}
+
+#input-task-container {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    column-gap: .5rem;
+}
+
+#task-input {
+    padding: .5rem;
+}
+
+.task-li {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: center;
+}
+
+.task-p {
+    justify-self: left;
+}
+
+.task-status, .delete-task {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.delete-task {
+    justify-self: end;
+}
+
+
+
+
+

@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body    {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;;
+}
+
+h1 {
+    margin: 1rem 0;
+    color: rgb(85, 4, 4);
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 1px 1px rgb(85, 4, 4);
+}
+
+.center{
+    text-align: center;
+}
+
+.true  { /* targets tasks that have been completed*/
+    position: relative;
+}
+
+.true::after {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 10;
+    content: " ";
+    width: 40vw;
+    background-color: white;
+    height: .5%;
+}
+#todos-box {
+    border: 1px solid black;
+    padding: 2rem .5rem;
+    margin-bottom: 2rem;
+    border-radius: .3rem;
+    background: linear-gradient(to bottom, rgb(85, 4, 4), navy);
+}
+
+#todos-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    margin-top: 3rem;
+}
+
+
+#input-task-container {
+    display: grid;
+    grid-template-columns: 4% 10fr 2fr;
+    column-gap: .5rem;
+}
+
+#task-input {
+    padding: .5rem;
+    border: 2px solid rgb(85, 4, 4);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    background-color: rgb(228, 226, 226);
+}
+
+.task-li {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: center;
+    margin: 1rem;
+    padding: .2rem;
+    box-shadow: 0 0 4px;
+    font-size: 1.3rem;
+}
+
+#book {
+    display: inline;
+    font-size: 2rem;
+    align-self: center;
+    margin-top: -.5rem;
+    height: 100%;
+}
+
+.task-p {
+    justify-self: left;
+}
+
+.task-status, .delete-task {
+    width: 50%;
+    height: 100%;
+}
+
+.delete-task {
+    justify-self: end;
+    font-size: 2rem;
+    color: white;
+    background-color: rgb(85, 4, 4);
+    align-self: center;
+    cursor: pointer;
+}
+
+.no-task {
+    margin: 0 auto 1rem auto;
+    color: white;
+    background: linear-gradient(to top, navy, rgb(172, 2, 2));
+    max-width: 40%;
+    border-radius: 4px;
+    padding: .5rem;
+    text-align: center;
+}
+
+#all-tasks, #active-tasks, #completed-tasks {
+    width: 30%;
+    margin: .5rem;
+    padding: .5rem;
+    background: linear-gradient(to right, navy,  navy);
+    border: none;
+    color: white;
+    box-shadow: 0 0 3px 1px white;
+    transition: .5s ease-in-out;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+}
+
+#completed-tasks:hover, #all-tasks:hover, #active-tasks:hover {
+    scale: 1.05;
+}
+
+#tasks-left {
+    background-color: rgb(85, 4, 4);
+    box-shadow: 0px 0px 3px white;
+    padding: .5rem;
+    width: 30%;
+    text-align: center;
+}
+
+#add-task {
+    background-color: rgb(85, 4, 4);
+    color: white;
+    padding: .5rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 900;
+}
+
+.marked {
+    background-color: green;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+}
+
+
+
+
+
+

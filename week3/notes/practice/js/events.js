@@ -16,3 +16,4 @@ function highlight(event){
 const hoverParagraph = document.getElementById("mouse");
 
 hoverParagraph.addEventListener("mouseover", highlight)
+
