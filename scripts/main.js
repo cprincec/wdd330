@@ -26,7 +26,7 @@ const links = [
         description: ""
     },
     {
-        label: "Week 6 notes",
+        label: "Week 6 Checkin",
         url: "./week5/todo_remade/index.html",
         description: "Todo app"
     }
