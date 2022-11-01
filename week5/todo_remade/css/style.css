@@ -156,6 +156,10 @@ h1 {
     font-weight: 900;
 }
 
+.active {
+    color: rgb(172, 2, 2);
+}
+
 
 
 

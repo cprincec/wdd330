@@ -49,8 +49,8 @@ class Todo {
         const numberOfTasks = document.querySelector("#tasks-left");
         if (this.tasks.length) {
             this.parentTag.innerHTML = "";
-            this.tasks.filter(task=> task.completed == false)
-            .forEach(task => this.parentTag.innerHTML += `
+            this.tasks.filter(task => task.completed == false)
+                .forEach(task => this.parentTag.innerHTML += `
             <li class="task-li" id="${task.id}">
             <input disabled class="task-status">
             <p class="task-p">${task.content}</p>
@@ -70,8 +70,8 @@ class Todo {
         const numberOfTasks = document.querySelector("#tasks-left");
         if (this.tasks.length) {
             this.parentTag.innerHTML = "";
-            this.tasks.filter(task=> task.completed == true)
-            .forEach(task => this.parentTag.innerHTML += `
+            this.tasks.filter(task => task.completed == true)
+                .forEach(task => this.parentTag.innerHTML += `
             <li class="task-li" id="${task.id}">
             <input disabled class="task-status">
             <p class="task-p">${task.content}</p>
@@ -93,6 +93,16 @@ class Todo {
         } else if (e.target.classList.contains("task-status")) {
             this.updateTaskStatus(e);
             writeToLS(this.tasksKey, this.tasks);
+        }
+        const tasksLeft = document.querySelector("#tasks-left");
+        if (tasksLeft.innerHTML.includes("completed")) {
+            this.renderCompletedTasks()
+            // console.log(tasksLeft.innerHTML);
+        } else if (tasksLeft.innerHTML.includes("undone")) {
+            this.renderActiveTasks()
+            // console.log(tasksLeft.innerHTML);
+        } else {
+            this.renderTasks()
         }
     }
 
@@ -124,19 +134,19 @@ class Todo {
         // remove the checkmark if the task is not completed
         // this function targets the status class of the task element (either true or false)
         // the status class of the task element is updated by the strikeTask function.
-        
+
         this.strikeTask();
         if (this.parentTag.children) {
             document.querySelectorAll(".true").forEach(element => {
-                let status =  element.previousElementSibling;
-               status.value = "✔";
-               status.classList.add("marked");
+                let status = element.previousElementSibling;
+                status.value = "✔";
+                status.classList.add("marked");
 
             });
             document.querySelectorAll(".false").forEach(element => {
-                let status =  element.previousElementSibling;
-               status.value = "";
-               status.classList.remove("marked");
+                let status = element.previousElementSibling;
+                status.value = "";
+                status.classList.remove("marked");
             });
         }
     }
