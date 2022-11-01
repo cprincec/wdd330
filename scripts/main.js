@@ -19,6 +19,16 @@ const links = [
         label: "Week 4 notes",
         url: "./week4/index.html",
         description: "Forms, OOP, Modular JavaScript"
+    },
+    {
+        label: "Week 5 notes",
+        url: "",
+        description: ""
+    },
+    {
+        label: "Week 6 notes",
+        url: "./week5/todo_remade/index.html",
+        description: "Todo app"
     }
 ];
 
