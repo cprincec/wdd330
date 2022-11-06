@@ -22,8 +22,8 @@ const links = [
     },
     {
         label: "Week 5 notes",
-        url: "",
-        description: ""
+        url: "./week5/index.html",
+        description: "Testing and Debugging"
     },
     {
         label: "Week 6 Checkin",

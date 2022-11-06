@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 
-body    {
-    width: 80%;
-    margin: 0 auto;
+body {
+    margin: 0 .5rem;
     color: white;
     font-size: 20px;
-    font-family: 'Quicksand', sans-serif;;
+    font-family: 'Quicksand', sans-serif;
+    ;
 }
 
 h1 {
@@ -20,11 +20,12 @@ h1 {
     text-shadow: 1px 1px rgb(85, 4, 4);
 }
 
-.center{
+.center {
     text-align: center;
 }
 
-.true  { /* targets tasks that have been completed*/
+.true {
+    /* targets tasks that have been completed*/
     position: relative;
 }
 
@@ -39,6 +40,7 @@ h1 {
     background-color: white;
     height: .5%;
 }
+
 #todos-box {
     border: 1px solid black;
     padding: 2rem .5rem;
@@ -92,7 +94,8 @@ h1 {
     justify-self: left;
 }
 
-.task-status, .delete-task {
+.task-status,
+.delete-task {
     width: 50%;
     height: 100%;
 }
@@ -116,11 +119,13 @@ h1 {
     text-align: center;
 }
 
-#all-tasks, #active-tasks, #completed-tasks {
+#all-tasks,
+#active-tasks,
+#completed-tasks {
     width: 30%;
     margin: .5rem;
     padding: .5rem;
-    background: linear-gradient(to right, navy,  navy);
+    background: linear-gradient(to right, navy, navy);
     border: none;
     color: white;
     box-shadow: 0 0 3px 1px white;
@@ -129,7 +134,9 @@ h1 {
     font-size: 1.1rem;
 }
 
-#completed-tasks:hover, #all-tasks:hover, #active-tasks:hover {
+#completed-tasks:hover,
+#all-tasks:hover,
+#active-tasks:hover {
     scale: 1.05;
 }
 
@@ -160,8 +167,13 @@ h1 {
     color: rgb(172, 2, 2);
 }
 
+@media (min-width:32.5em) {
+    body {
+        max-width: 700px;
+        margin: 0 auto;
+    }
 
-
-
-
-
+    .true::after {
+        width: 30vw;
+    }
+}

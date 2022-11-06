@@ -6,3 +6,4 @@ function tasksCount(parentElement) {
 export {
     tasksCount
 }
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Testing and debugging</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testing and Debugging</h1>
+    Testing and debugging
+Javascript is loosely typed which means that it can run some code without throwing errors that will stop the code or might just do so quitetly
+This is a dangerous functions
+The strict mode is used to ensure poor codes or errors are thrown so that they can be fixed to avoid a bigger bug at a latter time.
+The 'strick mode' key word are ignored by engines that cannot run them
+not using strict mode is called sloppy mode
+Errors are caused when something goes wrong in a program. They are usually caused by one of the following:
+
+System error ― there’s a problem with the system or external devices with which the program is interacting.
+
+Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple as a typo.
+User error ― the user has entered data incorrectly, which the program is unable to handle.
+
+Exception is an error that produces a return value that can be used to deal with the error. eg Reference error raised when calling a non existent variable.
+THe recommended way to invoke strict mode is to use a self invoking function with strict mode written inside.
+
+JAvaScript error objects include:aReferenceError, SyntaxError, TypeError, URIError, InternalError, RangeError
+
+TEST DRIVEN DEVELOPMENT
+
+This is the process of writing tests for our code (eg functions) in our program before actually writing the code. 
+These test would initially fail because the code they test have not been written
+
+Process for TDD
+Wite test that initally fail
+Write code for the test to pass
+Refactor the code test refactored code
+Write more test for new features
+
+The above is usually called "red-green-refactor" cycle of TDD, as failing tests usually show up as red, and tests that pass show as green.
+
+Testing Frameworks
+Jest is a TDD framework, created by Facebook, that has gained a lot of popularity recently. It makes it easy to create and run tests by providing helper methods for common test assertions.
+
+</body>
+</html>
