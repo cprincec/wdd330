@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Further Functions</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Further Functions</h1>
+    <ul>
+        <li>The difference between the call and apply function is that the arguments for an apply method is provided as
+            an array.</li>
+        <li>you can add properties to functions eg assuming we have a functions called square, we can add a description
+            to it thus: square.description = "string that describes the function".
+        </li>
+        <li>a technique called init branching is used to apply feature detection in a program. To do this, we use a
+            function that defines and rewrites itself with two if statement that redefines the function based on if the
+            feature is supported or not.
+            Example:
+            function ride(){
+            if (window.unicorn) {
+            ride = function(){
+            // some code that uses the brand new and sparkly unicorn methods
+            return 'Riding on a unicorn is the best!';
+            }
+            } else {
+            ride = function(){
+            // some code that uses the older pony methods
+            return 'Riding on a pony is still pretty good';
+            }
+            }
+            return ride();
+            }</li>
+    </ul>
+
+    <h2>Recursive function</h2>
+    <p>a function that invokes itself continously until a certain condition is met.</p>
+    <br>
+    <p>- JavaScript is single-threaded which means only one code can run at a time.</p>
+
+    <p> - functions can also return functions</p>
+
+    <p>- Any property delared in a function that defines and rewrites itself is lost after first call.</p>
+
+    <h2> Memoization</h2>
+    <p>storing the result of a function in cache so as to retrieve it if the functions is called again with the same
+        argument instead of executing the function again.</p>
+
+    <h2>closure</h2>
+    <ul>
+        <li>A closure is formed when a function returns another function that then maintains access to any variables
+            created in
+            the original function’s scope</li>
+        <li> Closures not only have access to variables declared in a parent function's scope, they can also change the
+            value of
+            these variables.</li>
+    </ul>
+
+    <p> - <em>JavaScript is a multi-paradigm programming language (meaning that it supports functional programming,
+            procedural
+            programming, object oriented programming etc)</em></p>
+
+    <h2>Higher-Order Functions</h2>
+
+    <p>Higher-order functions are functions that accept another function as an argument, or return another function as a
+    result, or both.</p>
+
+
+</body>
+
+</html>
