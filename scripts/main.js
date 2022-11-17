@@ -34,6 +34,11 @@ const links = [
         label: "Week 7 notes",
         url: "./week7/index.html",
         description: "Further Functions, AJAX"
+    },
+    {
+        label: "Week 9 notes",
+        url: "./week9/index.html",
+        description: "Window Object, HTML5 APIs"
     }
 ];
 
