@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on the Window Object</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The Window Object</h1>
+    <ul>
+        <li>the window object is the global object in a browser environment.</li>
+        <li>The window.confirm() method will return a value of true or false.
+        </li>
+        <li>the window.navigator.userAgent property which returns the browser and operating system of a user is not to
+            be relied on because ther values can be changed by a user
+        </li>
+        <li>the userAgent Property has been deprecated
+        </li>
+        <li>don't rely on cookie Expiry, som browser may retirve information stroes in a cookie that should have expired
+            when the "session restore" feture is used affter a crash.
+        </li>
+        <li>the setTimeout() method retruns a string that can be used as a refernce to that particular setTimeout. This
+            refernce can be used to clear that timeout.
+        </li>
+        <li>three window dialogs include: alert(), confirm(), prompt()
+        </li>
+        <li>The window.requestAnimationFrame() method can be used to produce smooth and optimized animation by utilizing
+            the browser's built-in graphics capabilities. It can be canceled using the cancelAnimationFrame() method.
+        </li>
+    </ul>
+</body>
+
+</html>

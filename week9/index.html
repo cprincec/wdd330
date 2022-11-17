@@ -1,0 +1,117 @@
+
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on the window objact and HTML5 APIs</title>
+</head>
+
+<body>
+    <h1>Readings</h1>
+    <ul>
+        <li><a href="./notes/window_object.html">The Window Object</a></li>
+        <li><a href="./notes/html5_apis.html">HTML5 APIs</a></li>
+    </ul>
+
+    <h2>Practice Works</h2>
+    <ul>
+        <li><a href="./notes/practice/quiz_fetch.html">Quiz game with setInterval and web storage (local storage)</a></li>
+        <li><a href="./notes/practice/websocket.html">Echo chat app using websocket</a></li>
+    </ul>
+
+    <h2>Questions</h2>
+    <div>How often/much are these used in the industry today?</div>
+    <ul>
+        <li>Web Workers (under the HTML5 APIs reading))</li>
+        <li>Canvas (under the HTML5 APIs reading)</li>
+    </ul>
+    <script>
+        const song = document.querySelector('audio');
+
+        const btn = document.getElementById('rainbow');
+
+        // const rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'rebeccapurple', 'violet'];
+
+        // function change() {
+        //     document.body.style.background = rainbow[Math.floor(7 *
+        //         Math.random())];
+        // }
+        // btn.addEventListener('click', change);
+
+        const rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'rebeccapurple', 'violet'];
+
+        function change() {
+            document.body.style.background = rainbow[Math.floor(7 * Math.random())];
+        }
+        btn.addEventListener("click", change);
+
+
+        const form = document.forms[0];
+        form.addEventListener('submit', factorize, false);
+
+        function factorize(event) {
+            // prevent the form from being submitted
+            event.preventDefault();
+
+            const number = Number(form.number.value);
+            document.getElementById('output').textContent = factorsOf(number);
+        }
+
+        function factorsOf(n) {
+            if (Number.isNaN(Number(n))) {
+                throw new RangeError('Argument Error: Value must be an integer');
+            }
+            if (n < 0) {
+                throw new RangeError('Argument Error: Number must be positive');
+            }
+            if (!Number.isInteger(n)) {
+                throw new RangeError('Argument Error: Number must be an integer');
+            }
+            const factors = [];
+            for (let i = 1, max = Math.sqrt(n); i <= max; i++) {
+                if (n % i === 0) {
+                    factors.push(i, n / i);
+                }
+            }
+            return factors.sort((a, b) => a - b);
+        }
+
+
+
+
+        // const squareElement = document.getElementById('square');
+        // let angle = 0;
+
+        // const time = setInterval(() => {
+        //     angle = (angle + 2) % 360;
+        //     squareElement.style.transform = `rotate(${angle}deg)`
+        //     console.log(`moved ${angle} degrees`)
+        //     if (angle == 0) {
+        //         clearInterval(time)
+        //     }
+        // }, 1000 / 60);
+
+        // time;
+        // console.log(`moved ${angle} today`);
+
+
+        navigator.geolocation.getCurrentPosition(usePosition)
+        function usePosition(position) {
+            console.log(`${position.altitude}`)
+        }
+
+        navigator.geolocation.getCurrentPosition(youAreHere);
+        function youAreHere(position) {
+            console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on HTML5 APIs</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML5 APIs</h1>
+    <ul>
+        <li> web storage API methods include the localStorage and sessionStorage Methods
+        </li>
+        <li>the getCurrentPosition method which returns an object containing information about the device takes in one
+            arguement which is a callback function.
+        </li>
+    </ul>
+
+    <h2>Web Workers</h2>
+    <p>Web workers allow computationally complex operations to be performed in a separate thread, meaning that the flow
+        of a program won’t suffer interruptions, and an application will not freeze or hang. They are a useful feature
+        that help to keep sites responsive, even when complicated operations are being carried out.
+    </p>
+    <h2>Service Workers
+    </h2>
+    <p>The Service Worker API allows a worker script to run in the background with the added benefit of being able to
+        intercept network requests. This allows you to take alternative action if the network is offline, and
+        effectively create app-like offline experiences. Service workers also allow access to push notifications and
+        background syncing. Service workers require a secure network to run on HTTPS to avoid any malicious code
+        hijacking network requests.
+    </p>
+    <h2>Websocket
+    </h2>
+    <p>Websocket is a new protocol that allows two-way communication with a server – also known as push messaging. This
+        means that a connection is kept open and responses are ‘pushed’ to the client as soon as they are received.
+    </p>
+</body>
+
+</html>
