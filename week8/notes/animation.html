@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforms and Transitions</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transforms and Transitions and Animation</h1>
+    <h2>Transforms</h2>
+
+
+    <p>The CSS3 transform property lets you lets you translate, rotate, scale, and/or skew any element on the page.
+    </p>
+    <h3>NOTE: </h3>
+    <ul>
+        <li>Transforms don’t work on inline elements. </li>
+        <li>A second translate on an element will overide the first.</li>
+        <li>The order of transform functions does matter: if you rotate before translating, your translate direction
+            will be on the rotated axis.
+        </li>
+    </ul>
+
+    <h2>Translate</h2>
+    <li>Translation functions allow you to move elements left, right, up, or down.</li>
+    <li>The translate(x,y) function moves an element x from the left, and y from the top. Eg: transform: translate(45px,
+        -45px);
+    </li>
+    <li>Transforms require vendor prefixing for IE9, Android up to 4.4.3, iOS8, and Blackberry 10. Example
+        -webkit-transform: translate(45px,-45px); /* iOS8, Android
+        ↵4.4.3, BB10 */,
+        -ms-transform: translate(45px,-45px); /* IE9 only */,
+        transform: translate(45px,-45px);</li>
+    <li>To move an element vertically or horizontally, you can use the translatex or translatey functions respectively.
+    </li>
+    <h3>Scale</h3>
+    <p>A scaled element will grow outwards from or shrink inwards towards its center; in other words, the element’s
+        center will stay in the same place as its dimensions change. To change this default behavior, you can include
+        the transform-origin property
+    </p>
+    <h2>Transitions</h2>
+    <p>Transitions allow the values of CSS properties to change over time, essentially providing simple animations. For
+        example, if a link changes color on hover, you can have it gradually fade from one color to the other instead of
+        a sudden change.
+    </p>
+
+    <h2>Animation</h2>
+    <ul>
+        <li>A keyframe is a snapshot that defines a starting or end point of any smooth transition</li>
+        <li>Animations allow control of transitions at a granular level.</li>
+        <li>The animation property takes as its value a space-separated list of values for the longhand animation-name,
+            animation-duration, animation-timing-function, animation-delay, animation-iteration-count,
+            animation-direction, animation-fill-mode, and animation-play-state properties.
+        </li>
+    </ul>
+</body>
+
+</html>

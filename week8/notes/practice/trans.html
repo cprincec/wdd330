@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        #move {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation: moving 10s linear infinite alternate;
+        }
+
+        
+
+        @keyframes moving {
+            0% {
+                transform: translate(100%, -20px);
+            }
+
+            25% {
+                transform: translate(100%, 20px);
+            }
+
+            50% {
+                transform: translate(100%, -20px);
+            }
+
+            100% {
+                transform: translateX(100%, 20px);
+            }
+        }
+
+        #can {
+            border: 2px dotted red;
+        }
+
+        .drag-to {
+            background-color: beige;
+            width: 400px;
+            height: 400px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="move"></div>
+    <canvas id="can" width="200" height="200">Not working</canvas>
+    <canvas id="demo"></canvas> -->
+    <div class="container">
+        <img src="./images/1544764567.svg" alt="img1" draggable="true" id="img1">
+        <img src="./images/ftmouse.svg" alt="img2" draggable="true" id="img2">
+    </div>
+    <h2 id="message">message</h2>
+    <div class="drag-to">
+
+    </div>
+    <script>
+
+        const imgs = document.querySelectorAll("img");
+        let mouse;
+        for (let i = 0; i < imgs.length; i++) {
+            mouse = imgs[i];
+            mouse.addEventListener("dragstart", function (event) {
+                event.dataTransfer.setData("text/plain", this.id);
+                // console.log(event);
+                // console.log(event.dataTransfer.getData("text/plain"));
+            })
+        }
+
+        document.querySelector(".drag-to").addEventListener("dragover", function (event) {
+            event.preventDefault();
+            // console.log(event);
+        })
+
+        const container = document.querySelector(".drag-to");
+        container.addEventListener("drop", function (event) {
+            var mouseHash = {
+                img1: 'NOMNOMNOM',
+                img2: 'Meow',
+                mouse3: 'Purrrrrr ...'
+            };
+            let mouseID = event.dataTransfer.getData("text/plain");
+            document.querySelector("#message").innerHTML = mouseHash[mouseID];
+        });
+
+
+
+
+
+
+        // let can = document.querySelector("#can");
+        // let canvas = can.getContext("2d");
+        // canvas.fillStyle = "green";
+        // canvas.strokeStyle = "blue";
+        // canvas.fillRect(0, 0, 200, 200);
+        // canvas.strokeRect(0, 0, 200, 200);
+
+        // let demo = document.querySelector("#demo");
+        // let demoCanvas = demo.getContext("2d");
+        // demoCanvas.strokeStyle = "green";
+        // let img = new Image();
+    </script>
+</body>
+
+</html>
