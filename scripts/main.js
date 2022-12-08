@@ -61,7 +61,3 @@ links.forEach(link => {
     li.append(div);
     ol.append(li);
 });
-
-
-
-
