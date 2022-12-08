@@ -36,6 +36,11 @@ const links = [
         description: "Further Functions, AJAX"
     },
     {
+        label: "Week 8 notes",
+        url: "./week8/index.html",
+        description: "Transform and Transitions, Canvas, SVG, and Drag and Drop "
+    },
+    {
         label: "Week 9 notes",
         url: "./week9/index.html",
         description: "Window Object, HTML5 APIs"
